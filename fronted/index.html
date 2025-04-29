@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna Bank - Loan Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="https://img.icons8.com/fluency/96/000000/bank-building.png" alt="Bank Logo" class="bank-logo">
+                <h1>Apna Bank</h1>
+                <p>Your Trusted Financial Partner</p>
+            </div>
+        </header>
+
+        <div class="progress-bar">
+            <div class="progress-steps">
+                <div class="step active" data-step="1">
+                    <span class="step-number">1</span>
+                    <span class="step-title">Registration</span>
+                    <i class="fas fa-user-plus step-icon"></i>
+                </div>
+                <div class="step" data-step="2">
+                    <span class="step-number">2</span>
+                    <span class="step-title">KYC Verification</span>
+                    <i class="fas fa-id-card step-icon"></i>
+                </div>
+                <div class="step" data-step="3">
+                    <span class="step-number">3</span>
+                    <span class="step-title">Profile Setup</span>
+                    <i class="fas fa-user-cog step-icon"></i>
+                </div>
+            </div>
+        </div>
+
+        <main>
+            <!-- Step 1: Registration Form -->
+            <form id="registrationForm" class="form-step active">
+                <h2><i class="fas fa-user-plus"></i> User Registration</h2>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email ID</label>
+                    <input type="email" id="email" required placeholder="Enter your email address">
+                    <button type="button" class="otp-btn" id="emailOtpBtn">
+                        <i class="fas fa-paper-plane"></i> Send OTP
+                    </button>
+                </div>
+                <div class="form-group otp-group" id="emailOtpGroup" style="display: none;">
+                    <label for="emailOtp"><i class="fas fa-key"></i> Email OTP</label>
+                    <input type="text" id="emailOtp" maxlength="6" required placeholder="Enter 6-digit OTP">
+                </div>
+                <div class="form-group">
+                    <label for="mobile"><i class="fas fa-mobile-alt"></i> Mobile Number</label>
+                    <input type="tel" id="mobile" required placeholder="Enter your mobile number">
+                    <button type="button" class="otp-btn" id="mobileOtpBtn">
+                        <i class="fas fa-paper-plane"></i> Send OTP
+                    </button>
+                </div>
+                <div class="form-group otp-group" id="mobileOtpGroup" style="display: none;">
+                    <label for="mobileOtp"><i class="fas fa-key"></i> Mobile OTP</label>
+                    <input type="text" id="mobileOtp" maxlength="6" required placeholder="Enter 6-digit OTP">
+                </div>
+                <button type="button" class="next-btn" id="step1Next">
+                    <i class="fas fa-arrow-right"></i> Next
+                </button>
+            </form>
+
+            <!-- Step 2: KYC Verification -->
+            <form id="kycForm" class="form-step">
+                <h2><i class="fas fa-id-card"></i> KYC Verification</h2>
+                <div class="form-group">
+                    <label for="aadhaar"><i class="fas fa-id-card"></i> Aadhaar Card Number</label>
+                    <input type="text" id="aadhaar" required placeholder="Enter 12-digit Aadhaar number">
+                    <button type="button" class="otp-btn" id="aadhaarOtpBtn">
+                        <i class="fas fa-paper-plane"></i> Send OTP
+                    </button>
+                </div>
+                <div class="form-group otp-group" id="aadhaarOtpGroup" style="display: none;">
+                    <label for="aadhaarOtp"><i class="fas fa-key"></i> Aadhaar OTP</label>
+                    <input type="text" id="aadhaarOtp" maxlength="6" required placeholder="Enter 6-digit OTP">
+                </div>
+                <div class="form-group">
+                    <label for="pan"><i class="fas fa-id-card"></i> PAN Card Number</label>
+                    <input type="text" id="pan" required placeholder="Enter PAN number">
+                </div>
+                <div class="form-group">
+                    <label for="bankAccount"><i class="fas fa-university"></i> Bank Account Number</label>
+                    <input type="text" id="bankAccount" required placeholder="Enter bank account number">
+                </div>
+                <div class="form-group">
+                    <label for="ifsc"><i class="fas fa-code"></i> IFSC Code</label>
+                    <input type="text" id="ifsc" required placeholder="Enter IFSC code">
+                </div>
+                <button type="button" class="prev-btn" id="step2Prev">
+                    <i class="fas fa-arrow-left"></i> Previous
+                </button>
+                <button type="button" class="next-btn" id="step2Next">
+                    <i class="fas fa-arrow-right"></i> Next
+                </button>
+            </form>
+
+            <!-- Step 3: Profile Setup -->
+            <form id="profileForm" class="form-step">
+                <h2><i class="fas fa-user-cog"></i> Profile Setup</h2>
+                <div class="form-group">
+                    <label for="profilePic"><i class="fas fa-camera"></i> Profile Picture</label>
+                    <div class="upload-container">
+                        <input type="file" id="profilePic" accept="image/*" required>
+                        <div class="upload-preview">
+                            <i class="fas fa-user"></i>
+                            <p>Upload Photo</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address"><i class="fas fa-home"></i> Permanent Address</label>
+                    <textarea id="address" required placeholder="Enter your permanent address"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="currentAddress"><i class="fas fa-map-marker-alt"></i> Current Address</label>
+                    <textarea id="currentAddress" placeholder="Enter your current address (if different)"></textarea>
+                </div>
+                <button type="button" class="prev-btn" id="step3Prev">
+                    <i class="fas fa-arrow-left"></i> Previous
+                </button>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-check"></i> Submit Application
+                </button>
+            </form>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
